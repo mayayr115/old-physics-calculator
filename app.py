@@ -9,13 +9,16 @@ def home():
 def submit():
     velocity = request.form.get('velocity')
     force = request.form.get('force')
-    power = request.form.get('Power')
+    power = request.form.get('power')
     
     # Process the data (e.g., save to database, send email, etc.)
     # For now, we'll just print it to the console
     print(f'Equation 1: {velocity}, Equation 2: {force}, Equation 3: {power}')
+
+    # if velocity:
+    #     return redirect(url_for('velocity'))
     
-    return redirect(url_for('home'))
+    return redirect(url_for('velocity'))
 
 @app.route('/velocity')
 def velocity():
