@@ -5,17 +5,17 @@ app = Flask(__name__, template_folder='templates')
 def home():
     return render_template('home.html')
 
-# @app.route('/submit', methods=['POST'])
-# def submit():
-#     name = request.form.get('name')
-#     email = request.form.get('email')
-#     message = request.form.get('message')
+@app.route('/submit', methods=['POST'])
+def submit():
+    velocity = request.form.get('velocity')
+    force = request.form.get('force')
+    power = request.form.get('Power')
     
-#     # Process the data (e.g., save to database, send email, etc.)
-#     # For now, we'll just print it to the console
-#     print(f'Name: {name}, Email: {email}, Message: {message}')
+    # Process the data (e.g., save to database, send email, etc.)
+    # For now, we'll just print it to the console
+    print(f'Equation 1: {velocity}, Equation 2: {force}, Equation 3: {power}')
     
-#     return redirect(url_for('home'))
+    return redirect(url_for('home'))
 
 @app.route('/velocity')
 def velocity():
