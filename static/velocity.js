@@ -1,0 +1,7 @@
+console.log("Velocity")
+console.log("Equation: v = d/t\n")
+console.log("Fill in the box of truth. (Type in NUMBERS ONLY!)")
+console.log("v = ?")
+let d = float(input("d = "))
+let t = float(input("t = \n"))
+console.log("v =", d/t, "m/s\n")
