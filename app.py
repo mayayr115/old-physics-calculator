@@ -7,22 +7,28 @@ def home():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    velocity = request.form.get('velocity')
-    force = request.form.get('force')
-    power = request.form.get('power')
-    
-    # Process the data (e.g., save to database, send email, etc.)
-    # For now, we'll just print it to the console
-    print(f'Equation 1: {velocity}, Equation 2: {force}, Equation 3: {power}')
+    option = request.form.get('option')
 
-    # if velocity:
-    #     return redirect(url_for('velocity'))
-    
-    return redirect(url_for('velocity'))
+    if option == 'velocity':
+        return redirect(url_for('velocity'))
+    elif option == 'force':
+        return redirect(url_for('force'))
+    elif option == 'power':
+        return redirect(url_for('power'))
+    else:
+        return redirect(url_for('home'))
 
 @app.route('/velocity')
 def velocity():
     return render_template('velocity.html')
+
+@app.route('/force')
+def force():
+    return render_template('force.html')
+
+@app.route('/power')
+def power():
+    return render_template('power.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
